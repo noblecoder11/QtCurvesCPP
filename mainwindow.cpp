@@ -13,26 +13,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// onclick functions for various buttons on main window
 void MainWindow::on_btnAsteroid_clicked()
 {
-    this->ui->renderArea->setShape(RenderArea::Asteroid);
-    this->ui->renderArea->setBackgroundColor(Qt::red);
-    this->ui->renderArea->repaint();
+    this->ui->renderArea->setShape(RenderArea::Asteroid);   // set shape is used (press f2 to see definition)
+    this->ui->renderArea->repaint();        // repaint is used to ensure drawing is done
 }
-
 
 void MainWindow::on_btnCycloid_clicked()
 {
     this->ui->renderArea->setShape(RenderArea::Cycloid);
-    this->ui->renderArea->setBackgroundColor(Qt::green);
     this->ui->renderArea->repaint();
 }
-
 
 void MainWindow::on_btnHuygenCycloid_clicked()
 {
     this->ui->renderArea->setShape(RenderArea::HuygensCycloid);
-    this->ui->renderArea->setBackgroundColor(Qt::blue);
     this->ui->renderArea->repaint();
 }
 
@@ -40,7 +36,12 @@ void MainWindow::on_btnHuygenCycloid_clicked()
 void MainWindow::on_btnHypoCycloid_clicked()
 {
     this->ui->renderArea->setShape(RenderArea::HypoCycloid);
-    this->ui->renderArea->setBackgroundColor(Qt::yellow);
+    this->ui->renderArea->repaint();
+}
+
+void MainWindow::on_btnLine_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Line);
     this->ui->renderArea->repaint();
 }
 
